@@ -1,21 +1,26 @@
 <!doctype html>
 <html lang="ru">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>ts-val</title>
-  </head>
-  <body>
-    <main>
-      <section>
-        <form novalidate>
-          <label>Имя <input type="text" required></label>
-          <p role="alert" aria-live="assertive"></p>
-          <button type="submit">Отправить</button>
-        </form>
-      </section>
-    </main>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/style.css">
+  <title>ts-val</title>
+</head>
+
+<body>
+  <main>
+    <section>
+      <form novalidate>
+        <label>Имя 
+          <input type="text" name="name" required>
+        </label>
+        <p role="alert" aria-live="assertive"></p>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

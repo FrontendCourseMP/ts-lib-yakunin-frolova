@@ -1,4 +1,4 @@
-// export type sum = (a: number, b: number) => number
+export type sum = (a: number, b: number) => number
 export interface ValidationRule {
   rule: 'required' | 'minLength' | 'maxLength' | 'email' | 'pattern' | string;
   value?: string;

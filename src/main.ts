@@ -1,27 +1,58 @@
-const form = document.querySelector("form");
-if (!form) throw new Error("Форма не найдена");
+import ValiGuard from './ValiGuard.js';
 
-// Ищем все input в форме
-const fields = Array.from(form.querySelectorAll("input, textarea, select"));
+const form = document.querySelector('form');
+if (!(form instanceof HTMLFormElement)) {
+  throw new Error('Форма не найдена или не является HTMLFormElement');
+}
 
-// Массив с информацией о каждом поле
-const formFields = fields.map(input => {
-  // label может быть родителем (как у тебя)
-  let label = input.closest("label");
 
-  // Контейнер ошибки — элемент после label/input
-  let errorEl = input.closest("label")?.nextElementSibling;
+const validator = new ValiGuard(form);
 
-  if (!errorEl || !(errorEl instanceof HTMLElement)) {
-    console.warn("Не найден контейнер ошибки для поля:", input);
-    errorEl = null;
-  }
-
-  return {
-    input,
-    label,
-    errorEl,
-  };
+// Пример: добавляем правила для нескольких полей
+validator.addField('email', {
+  required: true,
+  type: 'string',
+  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+  messages: {
+    required: 'Введите email',
+    pattern: 'Email в неверном формате',
+  },
 });
 
-console.log(formFields);
+validator.addField('age', {
+  required: false,
+  type: 'number',
+  min: 18,
+  max: 120,
+  messages: {
+    number: 'Возраст должен быть числом',
+    min: 'Возраст не может быть меньше 18',
+    max: 'Возраст не может быть больше 120',
+  },
+});
+
+validator.addField('interests', {
+  // группа чекбоксов name="interests"
+  minItems: 1,
+  messages: {
+    minItems: 'Выберите хотя бы один интерес',
+  },
+});
+
+validator.addField('name', {
+  required: true,
+  minLength: 2,
+  messages: {
+    required: 'Введите имя',
+    minLength: 'Имя должно быть не короче 2 символов',
+  },
+});
+
+form.addEventListener('submit', (event) => {
+  const result = validator.validate();
+
+  if (!result.isValid) {
+    event.preventDefault();
+    console.log('Ошибки валидации', result.errors);
+  }
+});
