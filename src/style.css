@@ -32,6 +32,7 @@ a:hover {
 body {
    display: flex;
    width: 50%;
+   margin-top: 50px;
 }
 
 h1 {
@@ -68,62 +69,169 @@ h1 {
 }
 
 form {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
 }
 
+label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 4px;
+    display: block;
+    text-align: left;
+}
+
+
 input {
-   display: flex;
-   background: rgb(154, 149, 149);
-   padding: 15px;
-   border: 1px solid black;
-   border-radius: 5px;
-   width: 100%; 
+    display: flex;
+    background: rgb(154, 149, 149);
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    color: #000000;
+    transition: all 0.25s ease;
+}
+
+
+input:focus {
+    outline: none;
+    border-color: #646cff;
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.15);
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
 }
 
 
 .input-field {
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    width: 100%;
 }
+
 
 .valiguard-error {
-   color: #ffffff;
-   margin-top: 10px;
-   background-color: rgb(255, 158, 158);
-   min-width: 500px;
+    color: red;
+    padding: 12px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(255, 170, 170);
+    border: 1px solid red;
+    border-radius: 10px;
+    min-width: 500px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
+
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.8em 1.5em; 
+    font-size: 1.1em; 
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+    border-color: #646cff;
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 108, 255, 0.2);
 }
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+    outline-color: rgba(100, 108, 255, 0.5);
+}
+
+button:disabled {
+    background-color: rgb(154, 149, 149);
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: none;
+}
+
+
+.form-success {
+    color: #00a86b;
+    padding: 12px 15px;
+    margin-top: 15px;
+    background-color: rgba(0, 168, 107, 0.1);
+    border: 1px solid #00a86b;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        width: 90%;
+        margin-top: 30px;
+    }
+    
+    section {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .valiguard-error {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    input {
+        padding: 12px;
+    }
+    
+    button {
+        padding: 0.7em 1.3em;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        width: 95%;
+        margin-top: 20px;
+    }
+    
+    section {
+        padding: 1.2rem;
+    }
+    
+    form {
+        gap: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        line-height: 1.2;
+    }
+}
+
+
