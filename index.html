@@ -25,6 +25,22 @@
               <input type="number" name="age" required placeholder="Возраст"/>
             </label>
           </div>
+          <div class="checkbox-group">
+            <p class="checkbox-group-title">Интересы</p>
+            <label class="checkbox-option">
+              <input type="checkbox" name="interests" value="sport" />
+              <span>Спорт</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="interests" value="music" />
+              <span>Музыка</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="interests" value="travel" />
+              <span>Путешествия</span>
+            </label>
+            <div class="valiguard-error" data-valiguard-error-for="interests"></div>
+          </div>
           <button type="submit">Отправить</button>
         </form>
       </section>

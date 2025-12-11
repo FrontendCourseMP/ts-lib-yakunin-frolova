@@ -48,6 +48,18 @@ validator.addField('name', {
   },
 });
 
+// Живая проверка: обновляем ошибки при изменении полей, чтобы чекбоксы и остальные
+// элементы сразу показывали состояние валидации без отправки формы.
+const inputs = form.querySelectorAll('input, select, textarea');
+inputs.forEach((input) => {
+  input.addEventListener('input', () => {
+    validator.validate();
+  });
+  input.addEventListener('change', () => {
+    validator.validate();
+  });
+});
+
 form.addEventListener('submit', (event) => {
   const result = validator.validate();
 

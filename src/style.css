@@ -85,7 +85,12 @@ label {
 }
 
 
-input {
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
     display: flex;
     background: rgb(154, 149, 149);
     padding: 15px;
@@ -98,13 +103,21 @@ input {
 }
 
 
-input:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
     outline: none;
     border-color: #646cff;
     box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.15);
 }
 
-input::placeholder {
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder {
     color: rgba(0, 0, 0, 0.7);
     opacity: 1;
 }
@@ -130,6 +143,34 @@ input::placeholder {
     text-align: left;
     font-size: 0.9rem;
     line-height: 1.4;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.checkbox-group-title {
+    font-weight: 600;
+    color: #000000;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #000000;
+    width: 100%;
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: auto;
+    min-width: 18px;
+    height: 18px;
+    margin: 0;
 }
 
 
