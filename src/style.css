@@ -31,8 +31,8 @@ a:hover {
 
 body {
    display: flex;
-   width: 50%;
    margin-top: 50px;
+
 }
 
 h1 {
@@ -72,7 +72,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px; 
-    width: 100%;
+    /* width: 100%; */
 }
 
 label {
@@ -82,8 +82,12 @@ label {
     margin-bottom: 4px;
     display: block;
     text-align: left;
+    width: 100%;
 }
 
+input {
+   width: 150%;
+}
 
 input[type="text"],
 input[type="email"],
@@ -96,7 +100,7 @@ select {
     padding: 15px;
     border: 1px solid black;
     border-radius: 5px;
-    width: 100%;
+    /* width: 150%; */
     font-size: 1rem;
     color: #000000;
     transition: all 0.25s ease;
@@ -127,29 +131,35 @@ input[type="password"]::placeholder {
     display: flex;
     flex-direction: column;
     gap: 8px; 
-    width: 100%;
 }
 
+
+.valiguard-error-field {
+  border: 2px solid #ff4d4d !important;
+  background-color: #ffe5e5 !important;
+}
+
+.valiguard-success-field {
+  border: 2px solid #27ae60 !important;
+  background-color: #e8fcee !important;
+}
 
 .valiguard-error {
-    color: red;
-    padding: 12px 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: rgb(255, 170, 170);
-    border: 1px solid red;
-    border-radius: 10px;
-    min-width: 500px;
-    text-align: left;
-    font-size: 0.9rem;
-    line-height: 1.4;
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 4px;
+  min-height: 18px;
 }
+
 
 .checkbox-group {
     display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px; 
     flex-direction: column;
     gap: 8px;
-    width: 100%;
+    width: 150%;
 }
 
 .checkbox-group-title {
@@ -186,8 +196,8 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
-    width: 100%;
-    max-width: 300px;
+    /* width: 100%; */
+    max-width: 400px;
     align-self: center;
 }
 
