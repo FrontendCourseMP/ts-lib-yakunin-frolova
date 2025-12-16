@@ -1,7 +1,3 @@
-import type { sum } from "./types/types";
+import type { sum as SumType } from "./types/types";
 
-const sum: sum = function (a: number, b: number) {
-  return a + b;
-}
-
-sum(1, 2)
+export const sum: SumType = (a: number, b: number) => a + b;

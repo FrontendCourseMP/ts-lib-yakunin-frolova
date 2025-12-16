@@ -69,10 +69,7 @@ h1 {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-    /* width: 100%; */
+    width: 100%;
 }
 
 label {
@@ -186,19 +183,16 @@ input[type="password"]::placeholder {
 
 button {
     border-radius: 8px;
-    border: 1px solid transparent;
+    border: 1px solid black;
     padding: 0.8em 1.5em; 
     font-size: 1.1em; 
     font-weight: 500;
     font-family: inherit;
     background-color: #000000;
     color: #ffffff;
-    cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
-    /* width: 100%; */
-    max-width: 400px;
-    align-self: center;
+    width: 100%;
 }
 
 button:hover {
